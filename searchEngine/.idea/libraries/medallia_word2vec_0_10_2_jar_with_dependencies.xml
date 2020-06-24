@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="medallia-word2vec-0.10.2-jar-with-dependencies">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../w2vJAR/medallia-word2vec-0.10.2-jar-with-dependencies.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

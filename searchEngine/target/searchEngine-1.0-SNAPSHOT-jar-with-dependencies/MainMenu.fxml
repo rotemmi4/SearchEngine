@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="617.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="corpusField" layoutX="212.0" layoutY="58.0" prefHeight="39.0" prefWidth="260.0" />
+      <TextField fx:id="postingField" layoutX="212.0" layoutY="105.0" prefHeight="39.0" prefWidth="260.0" />
+      <Button fx:id="loadPosting" layoutX="9.0" layoutY="105.0" mnemonicParsing="false" onAction="#postingPath" prefHeight="39.0" prefWidth="192.0" text="Browse/Save Posting" textFill="#9202f7">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="loadCorpus" layoutX="9.0" layoutY="58.0" mnemonicParsing="false" onAction="#openCorpus" prefHeight="39.0" prefWidth="192.0" text="Load Corpus" textFill="#0b9bf5">
+         <font>
+            <Font name="Aharoni Bold" size="19.0" />
+         </font></Button>
+      <CheckBox fx:id="stemmingCheckBox" layoutX="522.0" layoutY="97.0" mnemonicParsing="false" onAction="#stemming" text="Stemming" textFill="#ee6102">
+         <font>
+            <Font name="Aharoni Bold" size="21.0" />
+         </font></CheckBox>
+      <Button fx:id="reset" layoutX="397.0" layoutY="151.0" mnemonicParsing="false" onAction="#reset" prefHeight="40.0" prefWidth="84.0" text="Reset" textFill="#e10a0a">
+         <font>
+            <Font name="Aharoni Bold" size="19.0" />
+         </font></Button>
+      <Button fx:id="showDictionary" layoutX="11.0" layoutY="163.0" mnemonicParsing="false" onAction="#showDictionary" prefHeight="39.0" prefWidth="192.0" text="Show Dictionary" textFill="#3700ff">
+         <font>
+            <Font name="Aharoni Bold" size="20.0" />
+         </font></Button>
+      <Button fx:id="loadDictionary" layoutX="9.0" layoutY="215.0" mnemonicParsing="false" onAction="#loadDictionary" prefHeight="39.0" prefWidth="192.0" text="Load Dictionary" textFill="#eb66f5">
+         <font>
+            <Font name="Aharoni Bold" size="19.0" />
+         </font></Button>
+      <Button fx:id="run" layoutX="300.0" layoutY="151.0" mnemonicParsing="false" onAction="#runIndexer" prefHeight="40.0" prefWidth="84.0" text="Run" textFill="#58d916">
+         <font>
+            <Font name="Aharoni Bold" size="20.0" />
+         </font></Button>
+      <Label layoutX="212.0" layoutY="-10.0" prefHeight="65.0" prefWidth="310.0" text="Search Engine" textFill="#15d0ed">
+         <font>
+            <Font name="Gabriola" size="56.0" />
+         </font>
+      </Label>
+      <TextField fx:id="queryUserText" layoutX="243.0" layoutY="290.0" prefHeight="40.0" prefWidth="410.0" promptText="Please Write Your Query Here" />
+      <Button fx:id="queryFileLoader" layoutX="9.0" layoutY="290.0" mnemonicParsing="false" onAction="#browseQueryFile" prefHeight="40.0" prefWidth="192.0" text="Browse Query File" />
+      <Label layoutX="210.0" layoutY="303.0" text="OR" />
+      <CheckBox fx:id="semanticsCheckBox" layoutX="507.0" layoutY="340.0" mnemonicParsing="false" onAction="#semantics" prefHeight="29.0" prefWidth="152.0" text="Semantics" textFill="#ee6102">
+         <font>
+            <Font name="Aharoni Bold" size="21.0" />
+         </font>
+      </CheckBox>
+
+      <Button fx:id="runQuery" layoutX="295.0" layoutY="340.0" mnemonicParsing="false" onAction="#runQueryFromUser" prefHeight="20.0" prefWidth="145.0" text="Run Query" textFill="#58d916">
+         <font>
+            <Font name="Aharoni Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Trec_Eval" layoutX="11.0" layoutY="569.0" mnemonicParsing="false" onAction="#writeTrecEvalResultsButton" prefHeight="40.0" prefWidth="96.0" text="Trec-Eval" />
+      <Button fx:id="runQueryFile" layoutX="93.0" layoutY="340.0" mnemonicParsing="false" onAction="#runBrowseQuery" prefHeight="40.0" prefWidth="178.0" text="Run Query File" textFill="#58d916">
+         <font>
+            <Font name="Aharoni Bold" size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="queryNum" layoutX="67.0" layoutY="398.0" prefHeight="29.0" prefWidth="51.0" />
+      <Label layoutX="9.0" layoutY="399.0" prefHeight="27.0" prefWidth="74.0" text="Query#:" />
+      <Button fx:id="Next" layoutX="367.0" layoutY="589.0" mnemonicParsing="false" onAction="#next" prefHeight="29.0" prefWidth="96.0" text="Next&gt;&gt;" textFill="#58d916">
+         <font>
+            <Font name="Aharoni Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="Prev" layoutX="223.0" layoutY="589.0" mnemonicParsing="false" onAction="#prev" prefHeight="29.0" prefWidth="96.0" text="&lt;&lt;Prev" textFill="#58d916">
+         <font>
+            <Font name="Aharoni Bold" size="14.0" />
+         </font>
+      </Button>
+      <ListView fx:id="listOfDocNos" layoutX="121.0" layoutY="397.0" prefHeight="182.0" prefWidth="491.0" />
+      <Label layoutX="4.0" layoutY="246.0" prefHeight="57.0" prefWidth="727.0" text="----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="onlineCheckBox" layoutX="557.0" layoutY="371.0" mnemonicParsing="false" onAction="#online" prefHeight="18.0" prefWidth="137.0" text="Offline/Onlline" />
+   </children>
+</AnchorPane>
